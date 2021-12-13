@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "CleanSln": {
-      "commandName": "Project",
-      "commandLineArgs": "E:/repos/FileFinder/FileFinder.sln"
-    }
-  }
-}
