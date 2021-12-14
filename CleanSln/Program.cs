@@ -24,8 +24,9 @@ if (Path.GetExtension(sln) != ".sln")
     return;
 }
 
+system($"nuget restore \"{sln}\"");
 SolutionFile solution = SolutionFile.Parse(sln);
 foreach (SolutionConfigurationInSolution? config in solution.SolutionConfigurations)
 {
-    system($"msbuild -t:Clean -p:Configuration={config.ConfigurationName} -p:Platform={config.PlatformName} \"{sln}\"");
+    system($"msbuild -t:Clean -p:Configuration=\"{config.ConfigurationName}\" -p:Platform=\"{config.PlatformName}\" \"{sln}\"");
 }
